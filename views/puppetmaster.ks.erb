@@ -56,5 +56,7 @@ basearch=`uname -p`
 # Install puppet
 /usr/bin/yum install -y http://yum.puppetlabs.com/el/6/products/x86_64/puppetlabs-release-6-7.noarch.rpm
 /usr/bin/yum install -y puppet facter
-%end
 
+# Install puppetmaster
+/usr/bin/yum install -y puppet-server
+%end

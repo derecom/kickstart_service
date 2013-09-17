@@ -4,6 +4,6 @@ get '/' do
   'de.re.com kickstart service'
 end
 
-get '/ks/:host' do |host|
-  erb :'rhel_server.ks', :locals => { :host => host }
+get '/ks/:kind/:host' do |kind,host|
+  erb "#{kind}.ks".to_sym, :locals => { :host => host }
 end
