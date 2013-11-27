@@ -20,7 +20,7 @@ part pv.01 --grow --size=100
 volgroup os pv.01
 logvol swap --vgname=os --name=swap --fstype=swap --size=4096 --recommended
 logvol / --vgname=os --name=root --fstype=ext4 --size=30000
-logvol none --vgname=os --name=home --fstype=ext4 --size=80000
+logvol /home --vgname=os --name=home --fstype=ext4 --size=80000
 logvol /tmp --vgname=os --name=tmp --fstype=ext4 --size=20000
 
 firstboot --disabled
