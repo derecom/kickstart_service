@@ -30,6 +30,10 @@ reboot
 
 %post
 
+# Switch to new VT
+exec < /dev/tty6 > /dev/tty6
+chvt 6
+
 # Install default user
 /usr/bin/yum -y install sudo
 /usr/sbin/useradd ops -U -G wheel
@@ -56,5 +60,8 @@ basearch=`uname -p`
 # Install puppet
 /usr/bin/yum install -y http://yum.puppetlabs.com/el/6/products/x86_64/puppetlabs-release-6-7.noarch.rpm
 /usr/bin/yum install -y puppet facter
+
+# Change back to 1st VT
+chvt 1
 %end
 

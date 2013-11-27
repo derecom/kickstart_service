@@ -30,6 +30,10 @@ reboot
 
 %post
 
+# Switch to new VT
+exec < /dev/tty6 > /dev/tty6
+chvt 6
+
 # Install default user
 /usr/bin/yum -y install sudo
 /usr/sbin/useradd ops -U -G wheel
@@ -59,4 +63,7 @@ basearch=`uname -p`
 
 # Install puppetmaster
 /usr/bin/yum install -y puppet-server
+
+# Change back to 1st VT
+chvt 1
 %end
