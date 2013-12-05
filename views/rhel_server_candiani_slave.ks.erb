@@ -52,6 +52,7 @@ restorecon -R ~ops/.ssh
 basearch=`uname -p`
 /usr/bin/yum install -y http://ftp.upjs.sk/pub/mirrors/epel/6/${basearch}/epel-release-6-8.noarch.rpm
 /usr/bin/yum install -y http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.${basearch}.rpm
+/usr/bin/yum install -y http://www.elrepo.org/elrepo-release-6-5.el6.elrepo.noarch.rpm
 
 # Preliminary update
 /usr/bin/yum -y update
